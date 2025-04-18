@@ -40,9 +40,9 @@ public:
 	}
 };
 
-int main() {
-	Solution sol;
-	std::string s1 = "ABCD";
-	std::string s2 = "ABCD";
-	std::cout << std::boolalpha << sol.CheckPermutation(s1,s2) << std::endl;
-}
+//int main() {
+//	Solution sol;
+//	std::string s1 = "ABCD";
+//	std::string s2 = "ABCD";
+//	std::cout << std::boolalpha << sol.CheckPermutation(s1,s2) << std::endl;
+//}

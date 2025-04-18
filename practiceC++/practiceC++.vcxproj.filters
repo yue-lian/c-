@@ -21,10 +21,10 @@
     <ClCompile Include="0415_CheckPermutation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0416_ReplaceSpaces.cpp">
+    <ClCompile Include="0418_ReplaceSpaces.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0416_CanPermutePalindrome.cpp">
+    <ClCompile Include="0418_CanPermutePalindrome.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
