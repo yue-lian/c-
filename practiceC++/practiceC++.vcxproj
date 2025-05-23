@@ -127,10 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0418_CanPermutePalindrome.cpp" />
     <ClCompile Include="0415_CheckPermutation.cpp" />
-    <ClCompile Include="0415_IsUnique.cpp" />
-    <ClCompile Include="0418_ReplaceSpaces.cpp" />
+    <ClCompile Include="0415_isUnique.cpp" />
+    <ClCompile Include="0418_replaceSpaces.cpp" />
+    <ClCompile Include="0522_canPermutePalindrome.cpp" />
+    <ClCompile Include="+0522_oneEditAway.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

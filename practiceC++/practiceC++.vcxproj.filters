@@ -15,16 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="0415_IsUnique.cpp">
+    <ClCompile Include="0415_isUnique.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="0415_CheckPermutation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0418_ReplaceSpaces.cpp">
+    <ClCompile Include="0418_replaceSpaces.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0418_CanPermutePalindrome.cpp">
+    <ClCompile Include="0522_canPermutePalindrome.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="+0522_oneEditAway.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
