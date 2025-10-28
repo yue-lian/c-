@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\smart_pointer">
+      <UniqueIdentifier>{70263986-5af5-4726-b68f-099d336c540b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0415_isUnique.cpp">
@@ -29,6 +32,15 @@
     </ClCompile>
     <ClCompile Include="+0522_oneEditAway.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0523_compressString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="day250701.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件\smart_pointer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

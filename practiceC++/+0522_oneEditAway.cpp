@@ -77,11 +77,11 @@ public:
 	}
 };
 
-int main() {
-	Solution sol;
-	string first  = "teacher";
-	string second = "bteacher";
-	bool result = sol.oneEditAway(first, second);
-	cout << result;
-}
+//int main() {
+//	Solution sol;
+//	string first  = "teacher";
+//	string second = "bteacher";
+//	bool result = sol.oneEditAway(first, second);
+//	cout << result;
+//}
 
