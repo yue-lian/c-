@@ -133,7 +133,9 @@
     <ClCompile Include="0522_canPermutePalindrome.cpp" />
     <ClCompile Include="+0522_oneEditAway.cpp" />
     <ClCompile Include="0523_compressString.cpp" />
+    <ClCompile Include="copyFunction.cpp" />
     <ClCompile Include="day250701.cpp" />
+    <ClCompile Include="template_test.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

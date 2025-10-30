@@ -16,6 +16,12 @@
     <Filter Include="源文件\smart_pointer">
       <UniqueIdentifier>{70263986-5af5-4726-b68f-099d336c540b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\copy_function">
+      <UniqueIdentifier>{c871b25e-4c53-47ef-8e01-f89351d8b759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\template">
+      <UniqueIdentifier>{1cfc08b7-907a-41a0-b265-d2d6dee7d631}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0415_isUnique.cpp">
@@ -41,6 +47,12 @@
     </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>源文件\smart_pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="copyFunction.cpp">
+      <Filter>源文件\copy_function</Filter>
+    </ClCompile>
+    <ClCompile Include="template_test.cpp">
+      <Filter>源文件\template</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
