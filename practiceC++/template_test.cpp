@@ -1,5 +1,229 @@
 #include<iostream>
-#define TEMPLATE_CASE_3
+#include<vector>
+#include<stdexcept>
+//using namespace std;
+#define TEMPLATE_CASE_7
+
+
+#ifdef TEMPLATE_CASE_7
+/*
+* 模板元编程基础
+// 实现一个编译时计算阶乘的模板
+// 提示：使用模板特化来实现递归基线情况
+
+// 测试代码：
+cout << Factorial<5>::value << endl;  // 输出 120
+cout << Factorial<0>::value << endl;  // 输出 1
+*/
+template<int N>
+struct Factorial {
+    static const int value = N * Factorial <N - 1 >::value;
+};
+
+//模版特化
+template<>
+struct Factorial<0> {
+    static const int value = 1;
+};
+
+
+int main() {
+    std::cout << Factorial<5>::value << std::endl;  // 输出 120
+    std::cout << Factorial<0>::value << std::endl;  // 输出 1
+    return 0;
+}
+
+
+#endif // TEMPLATE_CASE_7
+
+
+
+#ifdef TEMPLATE_CASE_5
+/*
+// 实现一个函数模板 `findMax`，要求：
+// 1. 接受一个vector容器
+// 2. 返回容器中的最大元素
+// 3. 使用 typename 和 const 引用
+// 4. 如果容器为空，抛出异常
+
+// 测试代码：
+vector<int> v1 = {1, 5, 3, 9, 2};
+vector<double> v2 = {1.1, 5.5, 3.3};
+cout << findMax(v1) << endl;  // 输出 9
+cout << findMax(v2) << endl;  // 输出 5.5
+*/
+
+template <typename T>
+T findMax(const vector<T>& vec)
+{
+    if (vec.empty())
+        throw runtime_error("vector is empty!");
+    T maxValue = vec[0];
+    for (const T& val:vec)
+    {
+        if (maxValue < val)
+            maxValue = val;
+    }
+    return maxValue;
+}
+
+int main() {
+    vector<int> v1 = { 1,5,3,9,2 };
+    vector<double> v2 = { 1.1, 5.5, 3.3 };
+
+    cout << findMax(v1) << endl;
+    cout << findMax(v2) << endl;
+
+}
+
+
+#endif // TEMPLATE_CASE_5
+
+
+
+
+
+
+
+
+
+
+
+
+#ifdef TEMPLATE_CASE_4
+
+/*
+* 容器类模板
+// 实现一个简单的动态数组模板类 `DynamicArray`，要求：
+// - 构造函数：DynamicArray(int size)
+// - 拷贝构造函数和拷贝赋值运算符（深拷贝）
+// - 析构函数（正确释放内存）
+// - 重载 [] 运算符
+// - 成员函数 int size() const
+// - 成员函数 void resize(int newSize)
+
+// 测试代码：
+DynamicArray<int> arr(5);
+arr[0] = 10;
+DynamicArray<int> arr2 = arr;  // 深拷贝
+*/
+// 模板类定义
+using namespace std;
+template <typename T>
+class DynamicArray
+{
+private:
+    T* data;   // 动态分配的数组
+    int length;
+
+public:
+    // 构造函数
+    DynamicArray(int size)
+        : length(size)
+    {
+        data = new T[size];  // 分配内存
+    }
+
+    // 拷贝构造函数（深拷贝）
+    DynamicArray(const DynamicArray& other)
+        : length(other.length)
+    {
+        data = new T[length];
+        for (int i = 0; i < length; ++i)
+        {
+            data[i] = other.data[i];
+        }
+    }
+
+    // 拷贝赋值运算符（深拷贝）
+    DynamicArray& operator=(const DynamicArray& other)
+    {
+        if (this == &other) // 避免自赋值
+            return *this;
+
+        // 释放旧内存
+        delete[] data;
+
+        // 分配新空间并复制数据
+        length = other.length;
+        data = new T[length];
+        for (int i = 0; i < length; ++i)
+        {
+            data[i] = other.data[i];
+        }
+
+        return *this;
+    }
+
+    // 析构函数
+    ~DynamicArray()
+    {
+        delete[] data;
+    }
+
+    // 重载下标运算符
+    T& operator[](int index)
+    {
+        return data[index];
+    }
+
+    const T& operator[](int index) const
+    {
+        return data[index];
+    }
+
+    // 获取当前大小
+    int size() const
+    {
+        return length;
+    }
+
+    // 重新调整大小
+    void resize(int newSize)
+    {
+        T* newData = new T[newSize];
+        int copySize = (newSize < length) ? newSize : length;
+        for (int i = 0; i < copySize; ++i)
+        {
+            newData[i] = data[i];
+        }
+
+        delete[] data;
+        data = newData;
+        length = newSize;
+    }
+};
+
+// 测试代码
+int main()
+{
+    DynamicArray<int> arr(5);
+    arr[0] = 10;
+    arr[1] = 20;
+
+    cout << "arr[0] = " << arr[0] << endl;
+    cout << "arr size = " << arr.size() << endl;
+
+    DynamicArray<int> arr2 = arr; // 调用拷贝构造函数（深拷贝）
+    arr2[0] = 99;
+
+    cout << "arr[0] = " << arr[0] << ", arr2[0] = " << arr2[0] << endl;
+
+    arr.resize(8);
+    cout << "resized arr size = " << arr.size() << endl;
+
+    return 0;
+}
+#endif // TEMPLATE_CASE_4
+
+
+
+
+
+
+
+
+
 /*
 * 请实现一个函数模板 `swapValues`，用于交换两个同类型变量的值
 // 测试代码：
