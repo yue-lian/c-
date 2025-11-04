@@ -22,6 +22,12 @@
     <Filter Include="源文件\template">
       <UniqueIdentifier>{1cfc08b7-907a-41a0-b265-d2d6dee7d631}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\function_pointer">
+      <UniqueIdentifier>{69328a10-c2e6-4729-a5f7-eac2b0481723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lambda_test">
+      <UniqueIdentifier>{c0a47de8-efbf-47b3-87cc-09a026bd2080}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0415_isUnique.cpp">
@@ -53,6 +59,12 @@
     </ClCompile>
     <ClCompile Include="template_test.cpp">
       <Filter>源文件\template</Filter>
+    </ClCompile>
+    <ClCompile Include="testDemo1.cpp">
+      <Filter>源文件\function_pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="lambda_demo.cpp">
+      <Filter>源文件\lambda_test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

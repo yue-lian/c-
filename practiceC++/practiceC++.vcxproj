@@ -135,8 +135,10 @@
     <ClCompile Include="0523_compressString.cpp" />
     <ClCompile Include="copyFunction.cpp" />
     <ClCompile Include="day250701.cpp" />
+    <ClCompile Include="lambda_demo.cpp" />
     <ClCompile Include="template_test.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="testDemo1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

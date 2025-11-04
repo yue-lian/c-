@@ -1,11 +1,125 @@
 #include<iostream>
 #include<vector>
 #include<stdexcept>
+#include<string>
 //using namespace std;
-#define TEMPLATE_CASE_7
+#define TEMPLATE_CASE_
 
 
 #ifdef TEMPLATE_CASE_7
+/*
+* 1. 智能指针模板
+// 实现一个简化的共享指针模板 `SharedPtr`，要求：
+// - 引用计数管理
+// - 构造函数、拷贝构造函数、拷贝赋值运算符
+// - 析构函数
+// - 重载 * 和 -> 运算符
+// - 成员函数 int use_count() const 返回引用计数
+
+// 测试代码：
+SharedPtr<string> ptr1(new string("Hello"));
+SharedPtr<string> ptr2 = ptr1;
+cout << ptr1.use_count() << endl;  // 输出 2
+*/
+template<typename T>
+class SharedPtr
+{
+private:
+    T* ptr;          // 指向实际对象的指针
+    int* refCount;   // 指向引用计数的指针public:
+
+public:
+    //构造函数
+    SharedPtr(T* p = nullptr):ptr(p) {
+        if (p)
+            refCount = new int(1);
+        else
+            refCount = new int(0);
+    }
+
+    //拷贝构造函数
+    SharedPtr(const SharedPtr& other) :ptr(other.ptr),refCount(other.refCount){
+        if (ptr)
+        {
+            ++(*refCount);
+        }
+    }
+
+    //拷贝赋值运算符
+    SharedPtr& operator=(const SharedPtr& other) {
+        if (this == &other)
+            return *this;
+        release();
+        ptr = other.ptr;
+        refCount = other.refCount;
+        if (ptr)
+            ++(*refCount);
+        return *this;
+    }
+
+    ~SharedPtr() {
+        release();
+    }
+
+    //解引用
+    T& operator*() const{
+        return *ptr;
+    }
+
+    //成员访问
+    T* operator->() const {
+        return ptr;
+    }
+
+    // 返回引用计数
+    int use_count() const {
+        return *refCount;
+
+    }
+
+private:
+    void release() {
+        if (ptr)
+        {
+            --(*refCount);
+            if (*refCount == 0)
+            {
+                delete ptr;
+                delete refCount;
+                ptr = nullptr;
+                refCount = nullptr;
+            }
+        }
+        else if (refCount)
+        {
+            delete refCount;
+            refCount = nullptr;
+        }
+    }
+};
+
+int main()
+{
+    SharedPtr<std::string> ptr1(new std::string("Hello"));
+    SharedPtr<std::string> ptr2 = ptr1;  // 拷贝构造，共享同一对象
+    std::cout << *ptr1 << std::endl;          // 输出 Hello
+    std::cout << ptr1.use_count() << std::endl; // 输出 2
+
+    {
+        SharedPtr<std::string> ptr3 = ptr2;
+        std::cout << ptr1.use_count() << std::endl; // 输出 3
+    } // ptr3 离开作用域，引用计数自动减1
+
+    std::cout << ptr1.use_count() << std::endl; // 输出 2
+
+    return 0;
+}
+
+
+#endif // TEMPLATE_CASE_7
+
+
+#ifdef TEMPLATE_CASE_6
 /*
 * 模板元编程基础
 // 实现一个编译时计算阶乘的模板
@@ -34,7 +148,7 @@ int main() {
 }
 
 
-#endif // TEMPLATE_CASE_7
+#endif // TEMPLATE_CASE_6
 
 
 
