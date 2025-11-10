@@ -5,11 +5,48 @@
 #include <condition_variable>
 #include <queue>
 
-#define THREAD_CASE_9
+#define THREAD_CASE_10
 
 #ifdef THREAD_CASE_1
 
 #endif // THREAD_CASE_1
+
+#ifdef THREAD_CASE_10
+/*
+* 题目 10：条件变量实现生产者-消费者模型
+要求：
+
+使用 std::queue<int> 实现经典生产者-消费者模型；
+生产者放入数据（1~10）；
+消费者读取并打印；
+使用 std::condition_variable 保证同步。
+*/
+
+/*
+和题目9差不多，就是生产之后需要线程通讯告知消费者
+*/
+
+//公共参数
+std::queue<int> q;
+
+
+
+//生产者
+void producer() {
+
+}
+
+//消费者
+void consumer() {
+
+}
+
+int main() {
+
+}
+
+
+#endif // THREAD_CASE_10
 
 
 #ifdef THREAD_CASE_9
@@ -24,6 +61,13 @@ bool pop(int &value)
 用两个线程测试：一个不断 push，另一个不断 pop。
 */
 
+/*
+分析：
+1.首先保证push和pop要为原子操作，利用锁即可实现
+2.输出用到的cout不是原子操作，既可以通过我下面用到的先存进去，再统一输出
+3.也可以用其他方法，包装成一个新方法，方法里面给cout加个锁
+
+*/
 class SafeQuene {
 private:
 	std::queue<int> q;
